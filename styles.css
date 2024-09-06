@@ -72,14 +72,19 @@ body {
 
 .container {
   width: 37.5rem;
+  
 }
 
 /* Styles for testimonial cards */
 
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .testimonial {
   padding: 2.8rem 3.2rem 3.2rem 3.2rem;
   border-radius: 10px;
-  margin-bottom: 2rem;
 }
 .testimonial__header {
   display: flex;
@@ -131,7 +136,7 @@ body {
   color: var(--white);
 }
 
-@media (min-width: 42.5rem) {
+@media (min-width: 48.75rem) {
   .container {
     width: 144rem;
     display: flex;
@@ -141,7 +146,6 @@ body {
 
   .testimonials-container {
     width: 110rem;
-
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(4, 1fr);

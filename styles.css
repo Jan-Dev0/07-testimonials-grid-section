@@ -1,57 +1,170 @@
 /* General reset */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  * {
-    margin: 0;
-  }
-  body {
-    line-height: 1.5;
-  }
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  input, button, textarea, select {
-    font: inherit;
-  }
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
 
-  /* CSS variables for theme colors */
+/* CSS variables for theme colors */
 
 /* Primary */
 :root {
---moderate-violet: hsl(263, 55%, 52%);
---dark-grayish-blue: hsl(217, 19%, 35%);
---dark-blackish-blue: hsl(219, 29%, 14%);
---White: hsl(0, 0%, 100%);
+  --moderate-violet: #7541c8;
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
 
-/* Neutral */
---light-gray: hsl(0, 0%, 81%);
---light-grayish-blue: hsl(210, 46%, 95%);
+  /* Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 /* Global styles */
 
 html {
-    font-size: 62.5% /* 1rem = 10px; */
+  font-size: 62.5%; /* 1rem = 10px; */
 }
 
 body {
-    font-family: "Barlow Semi Condensed]", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grayish-blue);
+  border: 1px solid;
+}
+
+.container {
+  width: 37.5rem;
+}
+
+/* Styles for testimonial cards */
+
+.testimonial {
+  padding: 2.8rem 3.2rem 3.2rem 3.2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.testimonial__header {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+.testimonial__image {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  .testimonial__violet,
+  .testimonial__blue & {
+    border: 2px solid #a775f1;
+  }
+}
+.testimonial__info {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial__name {
+  font-weight: 600;
+}
+.testimonial__role {
+  opacity: 0.7;
+}
+.testimonial__highlight {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+.testimonial__details {
+  opacity: 0.7;
+}
+.testimonial__one {
+  background-color: var(--moderate-violet);
+  color: var(--white);
+}
+.testimonial__two {
+  background-color: var(--dark-grayish-blue);
+  color: var(--white);
+}
+.testimonial__three,
+.testimonial__five {
+  background-color: var(--white);
+  color: var(--dark-blackish-blue);
+}
+.testimonial__four {
+  background-color: var(--dark-blackish-blue);
+  color: var(--white);
+}
+
+@media (min-width: 42.5rem) {
+  .container {
+    width: 144rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--light-grayish-blue);
-}
+  }
 
-.testimonials-container {
-width: 375px;
-padding: 3rem;
-}
+  .testimonials-container {
+    width: 110rem;
 
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+
+  }
+
+  .testimonial__one {
+    grid-area: one;
+  }
+  .testimonial__two {
+    grid-area: two;
+  }
+  .testimonial__three {
+    grid-area: three;
+  }
+  .testimonial__four {
+    grid-area: four;
+  }
+  .testimonial__five {
+    grid-area: five;
+  }
+}

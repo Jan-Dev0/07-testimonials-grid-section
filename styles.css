@@ -67,30 +67,35 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--light-grayish-blue);
-  border: 1px solid;
 }
 
 .container {
-  width: 37.5rem;
+  width: 90%;
+  max-width: 110rem;
   
 }
 
 /* Styles for testimonial cards */
 
 .testimonials-container {
-  display: flex;
-  flex-direction: column;
+
+  display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
 }
+
 .testimonial {
   padding: 2.8rem 3.2rem 3.2rem 3.2rem;
   border-radius: 10px;
 }
+
 .testimonial__header {
   display: flex;
   gap: 1.8rem;
   margin-bottom: 1.8rem;
 }
+
 .testimonial__image {
   width: 3.2rem;
   height: 3.2rem;
@@ -100,56 +105,59 @@ body {
     border: 2px solid #a775f1;
   }
 }
+
 .testimonial__info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
+
 .testimonial__name {
   font-weight: 600;
 }
+
 .testimonial__role {
   opacity: 0.7;
 }
+
 .testimonial__highlight {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.8rem;
 }
+
 .testimonial__details {
   opacity: 0.7;
 }
+
 .testimonial__one {
   background-color: var(--moderate-violet);
   color: var(--white);
 }
+
 .testimonial__two {
   background-color: var(--dark-grayish-blue);
   color: var(--white);
 }
+
 .testimonial__three,
 .testimonial__five {
   background-color: var(--white);
   color: var(--dark-blackish-blue);
 }
+
 .testimonial__four {
   background-color: var(--dark-blackish-blue);
   color: var(--white);
 }
 
-@media (min-width: 48.75rem) {
-  .container {
-    width: 144rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
+@media (min-width: 90.25rem) {
+  
   .testimonials-container {
-    width: 110rem;
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-rows: auto auto;
     grid-template-areas:
       "one one two five"
       "three four four five";

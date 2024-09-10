@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://jan-dev0.github.io/testimonials-grid-section)
+- [Solution URL](https://jan-dev0.github.io/07-testimonials-grid-section/)
 
 ## My process
 
